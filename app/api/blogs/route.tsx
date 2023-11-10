@@ -37,3 +37,14 @@ export async function POST(request:Request){
         }
     }
 }
+
+export async function GET(req:Request){
+    try {
+        await ConnectDB()
+      const data = await BlogModel.find().sort({createdAt: -1})
+      return NextResponse.json({data})
+    } catch (error) {
+     console.log(error)
+     return NextResponse.json({msg: 'Failed to fetch'})
+    }
+ }

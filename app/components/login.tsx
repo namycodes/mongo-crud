@@ -10,7 +10,7 @@ export default function Login() {
 
     const handleSubmit=async(e:any)=>{
         e.preventDefault()
-        const res = await fetch('api/db',{
+        const res = await fetch('api/blogs',{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

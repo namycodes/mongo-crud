@@ -15,7 +15,7 @@ const BlogSchema = new Schema({
         required: [true,'This is a Requred field'],
         minLength:[10,'Body Should be 10 Characters Long']
     }
-})
+},{timestamps: true})
 
 const BlogModel = mongoose.models.blog || mongoose.model('blog',BlogSchema)
 export default BlogModel
